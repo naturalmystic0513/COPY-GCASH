@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Payment via GCash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .copy-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Send Payment via GCash</h2>
+        <p><strong>📱 GCash Number: </strong><span id="gcashNumber">09664111444</span></p>
+        <p><strong>👤 Name: </strong>JOSEPH PATIGAYON</p>
+        <button class="copy-btn" onclick="copyNumber()">📋 Copy GCash Number</button>
+        <br>
+        <img src="gcash_qr.jpg" alt="GCash QR Code">
+    </div>
+
+    <script>
+        function copyNumber() {
+            const number = document.getElementById("gcashNumber").innerText;
+            navigator.clipboard.writeText(number).then(() => {
+                alert("GCash Number Copied: " + number);
+            });
+        }
+    </script>
+</body>
+</html>
